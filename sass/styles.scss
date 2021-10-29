@@ -1,4 +1,8 @@
 @import './config/colors';
+@import './config/fonts';
+@import './components/header';
+@import './components/main';
+@import './components/footer';
 
 * {
   padding: 0;
@@ -7,5 +11,6 @@
 }
 
 html {
-  background-color: $primary-color;
+  font-family: $font-f-paragraph;
+  background-color: $secondary-color;
 }
