@@ -6,7 +6,7 @@
   align-items: center;
   background-color: $secondary-color;
   position: fixed;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   z-index: 100;
 
@@ -15,19 +15,34 @@
     list-style: none;
   }
 
-  & .logo {
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  // & div .header-name {
-  //   color: $light;
-  //   font-size: $title-font;
-  //   text-decoration: none;
-  //   font-family: $font-title;
+  // & .logo {
+  //   cursor: pointer;
+  //   transition: all 0.3s ease;
   // }
 
+  & .header-name {
+    color: $light;
+    text-decoration: none;
+    font-family: $font-title;
+    font-size: $title-font-size;
+    cursor: pointer;
+  }
+  
+  & .header-name::before {
+    content: "< ";
+    color: $primary-color;
+  }
+  
+  & .header-name::after {
+    content: " />";
+    color: $primary-color;
+  }
+
+  & .header-name:hover {
+    text-shadow: 0px 0px 1px rgba($color: $light, $alpha: 0.5);
+  }
 }
+
 
 .nav-menu i{
   color: white;
@@ -74,7 +89,9 @@ header.sticky {
   background-color: $light;
 }
 
-header.sticky nav a
+
+header.sticky nav a,
+header.sticky .header-name
 {
   color: $secondary-color;
 }
@@ -82,14 +99,14 @@ header.sticky nav a
 
 
 // cambio de estilos al svg
-header.sticky .background {
-  fill: $light;
-}
+// header.sticky .background {
+//   fill: $light;
+// }
 
-.letter {
-  transition: all 0.3s ease;
-}
+// .letter {
+//   transition: all 0.3s ease;
+// }
 
-header.sticky .letter {
-  fill: $secondary-color;
-}
+// header.sticky .letter {
+//   fill: $secondary-color;
+// }

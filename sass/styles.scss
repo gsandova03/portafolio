@@ -13,4 +13,6 @@
 html {
   font-family: $font-f-paragraph;
   background-color: $secondary-color;
+  max-width: 1366px;
+  overflow-x: hidden;
 }

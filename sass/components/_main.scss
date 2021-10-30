@@ -1,5 +1,8 @@
 .main-container {
   padding: 0 2rem;
-  padding-bottom: 100rem;
-  background-color: $secondary-color;
+  padding-top: 8rem;
+  background-color: $primary-color;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
 }

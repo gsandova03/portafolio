@@ -8,16 +8,30 @@
   align-items: center;
   background-color: #333;
   position: fixed;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   z-index: 100;
 }
 .header .header-navbar {
   list-style: none;
 }
-.header .logo {
+.header .header-name {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.4rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+}
+.header .header-name::before {
+  content: "< ";
+  color: #e9d946;
+}
+.header .header-name::after {
+  content: " />";
+  color: #e9d946;
+}
+.header .header-name:hover {
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
 }
 
 .nav-menu i {
@@ -63,26 +77,24 @@ header.sticky {
   background-color: #ffffff;
 }
 
-header.sticky nav a {
+header.sticky nav a,
+header.sticky .header-name {
   color: #333;
-}
-
-header.sticky .background {
-  fill: #ffffff;
-}
-
-.letter {
-  transition: all 0.3s ease;
-}
-
-header.sticky .letter {
-  fill: #333;
 }
 
 .main-container {
   padding: 0 2rem;
-  padding-bottom: 100rem;
+  padding-top: 8rem;
+  background-color: #e9d946;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.footer {
   background-color: #333;
+  width: 100vw;
+  height: 10vh;
 }
 
 * {
@@ -94,6 +106,8 @@ header.sticky .letter {
 html {
   font-family: "Open Sans", sans-serif;
   background-color: #333;
+  max-width: 1366px;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */
