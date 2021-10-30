@@ -1,8 +1,33 @@
 .main-container {
-  padding: 0 2rem;
-  padding-top: 8rem;
+  // padding: 0 4rem;
+  padding-top: 7rem;
   background-color: $primary-color;
   overflow-y: hidden;
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.main-container > * {
+  width: 100%;
+  height: 40rem;
+  padding: 0 4rem;
+}
+
+.main-container .main-description {
+  background-color: saddlebrown;
+}
+
+.main-container .main-tools {
+  background-color: sandybrown;
+}
+
+.main-container .main-projects {
+  background-color: teal;
+}
+
+.main-container .main-contact {
+  background-color: springgreen;
 }

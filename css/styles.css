@@ -54,6 +54,7 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
+  text-decoration: none;
 }
 .navbar-item::before {
   content: "";
@@ -83,12 +84,34 @@ header.sticky .header-name {
 }
 
 .main-container {
-  padding: 0 2rem;
-  padding-top: 8rem;
+  padding-top: 7rem;
   background-color: #e9d946;
   overflow-y: hidden;
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.main-container > * {
+  width: 100%;
+  height: 40rem;
+  padding: 0 4rem;
+}
+
+.main-container .main-description {
+  background-color: saddlebrown;
+}
+
+.main-container .main-tools {
+  background-color: sandybrown;
+}
+
+.main-container .main-projects {
+  background-color: teal;
+}
+
+.main-container .main-contact {
+  background-color: springgreen;
 }
 
 .footer {
@@ -108,6 +131,7 @@ html {
   background-color: #333;
   max-width: 1366px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /*# sourceMappingURL=styles.css.map */

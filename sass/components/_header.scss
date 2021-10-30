@@ -64,6 +64,7 @@
   cursor: pointer;
   font-size: $paragraph;
   font-weight: 500;
+  text-decoration: none;
 
   &::before {
     content: "";
