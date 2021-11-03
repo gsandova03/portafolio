@@ -1,0 +1,31 @@
+//Burger menu
+
+.burger {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  z-index: 101;
+  & > div {
+    width: 1.4rem;
+    height: 0.2rem;
+    border-radius: 3px;
+    background: $primary-color;
+    &::before,
+    &::after {
+      transition: font-size 0s;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1.4rem;
+      height: 0.2rem;
+      background: $primary-color;
+      border-radius: 3px;
+    }
+    &::before {
+      margin-top: -.5rem;
+    }
+    &::after {
+      margin-top: .5rem;
+    }
+  }
+}

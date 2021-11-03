@@ -5,20 +5,15 @@
   justify-content: space-between;
   align-items: center;
   background-color: $secondary-color;
-  position: fixed;
+  position: relative;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  z-index: 100;
-
+  z-index: 99;
+  
   
   & .header-navbar {
     list-style: none;
   }
-
-  // & .logo {
-  //   cursor: pointer;
-  //   transition: all 0.3s ease;
-  // }
 
   & .header-name {
     color: $light;
@@ -41,17 +36,6 @@
   & .header-name:hover {
     text-shadow: 0px 0px 1px rgba($color: $light, $alpha: 0.5);
   }
-}
-
-
-.nav-menu i{
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  right: 2rem;
-  top: 1.6rem;
-  display: none;
-  z-index: 101;
 }
 
 .navbar-item {
@@ -86,28 +70,73 @@
 }
 
 header.sticky {
-  padding: .3rem 3rem;
-  background-color: $light;
+  padding: 0 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: $secondary-color;
+  position: fixed;
 }
 
 
 header.sticky nav a,
 header.sticky .header-name
 {
-  color: $secondary-color;
+  color: $light;
+}
+
+.header-sidebar {
+  position: fixed;
+  width: 12rem;
+  height: calc( 100vh - 2rem );
+  top: 2rem;
+  right: -100%;
+  background-color: $secondary-color;
+  transition: all 0.3s ease;
+
+  z-index: 100;
+}
+
+.visible {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+// Nabar Collapse
+
+@media ( max-width: 320px ) {
+
+  .header-navbar {
+    display: none;
+  }
 }
 
 
+@media ( max-width: 630px ) {
 
-// cambio de estilos al svg
-// header.sticky .background {
-//   fill: $light;
-// }
+  .header {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
 
-// .letter {
-//   transition: all 0.3s ease;
-// }
+  .header-navbar {
+    display: none;
+  }
+}
 
-// header.sticky .letter {
-//   fill: $secondary-color;
+@media ( min-width: 630px ) {
+
+  .burger {
+    display: none;
+  }
+
+  .header-sidebar {
+    display: none;
+  }
+}
+
+// @media ( max-width: 1320px ) {
+
+  
 // }
