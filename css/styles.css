@@ -200,14 +200,14 @@ header.sticky .header-name {
 }
 .main-tools .tools-container div {
   width: 40%;
+  min-width: 20%;
+  flex-shrink: 1;
 }
 .main-tools .tools-container div .tools-title {
   color: #ffffff;
   text-align: center;
   font-size: 2.5rem;
   position: relative;
-  left: 20%;
-  display: inline-block;
   padding: 0.5rem 2rem;
 }
 .main-tools .tools-container div .tools-title::after {
@@ -223,6 +223,7 @@ header.sticky .header-name {
   height: 20rem;
   width: 60%;
   padding: 1rem;
+  flex-shrink: 3;
 }
 .main-tools .tools-container .tools-list .list-icons {
   display: grid;
@@ -278,6 +279,100 @@ header.sticky .header-name {
 }
 .main-tools .tools-container .tools-list .list-icons .tool-icon:hover {
   background-color: #3b3b3b;
+}
+
+.main-projects {
+  background-color: #333;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: " project1 project2 " " project3 project4 ";
+  padding-bottom: 2rem;
+  height: auto;
+  row-gap: 1rem;
+}
+.main-projects .main-projects__project1, .main-projects .main-projects__project2, .main-projects .main-projects__project3 {
+  background-color: white;
+  min-width: 20rem;
+  max-width: 28rem;
+  align-self: center;
+  height: 28rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.main-projects .main-projects__project1 {
+  justify-self: end;
+  margin-right: 1rem;
+}
+.main-projects .main-projects__project2 {
+  justify-self: start;
+  margin-left: 1rem;
+}
+.main-projects .main-projects__project3 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  justify-self: center;
+}
+.main-projects .main-projects__project1 .project-content .project-content__img img, .main-projects .main-projects__project2 .project-content .project-content__img img, .main-projects .main-projects__project3 .project-content .project-content__img img {
+  height: 12rem;
+  width: 100%;
+  background-size: cover;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details, .main-projects .main-projects__project2 .project-content .project-content__details, .main-projects .main-projects__project3 .project-content .project-content__details {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details .project-description, .main-projects .main-projects__project1 .project-content .project-content__details div, .main-projects .main-projects__project2 .project-content .project-content__details .project-description, .main-projects .main-projects__project2 .project-content .project-content__details div, .main-projects .main-projects__project3 .project-content .project-content__details .project-description, .main-projects .main-projects__project3 .project-content .project-content__details div {
+  flex-grow: 1;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details .project-description, .main-projects .main-projects__project2 .project-content .project-content__details .project-description, .main-projects .main-projects__project3 .project-content .project-content__details .project-description {
+  color: #333;
+  font-size: 1.1rem;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  height: 2rem;
+  border: none;
+  background-color: #333;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a {
+  border-radius: 4px;
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  z-index: 1;
+  transition: color 0.5s ease;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a:hover, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a:hover, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a:hover {
+  color: #333;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a:hover::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a:hover::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background-color: #e9d946;
+  border-radius: 4px;
+  z-index: -1;
+  transition: transform 0.5s ease;
 }
 
 .footer {

@@ -12,6 +12,8 @@
   padding: 0 2rem;
 }
 
+
+
 .main-description {
   display: flex;
   justify-content: space-evenly;
@@ -54,14 +56,14 @@
 
     & div {
       width: 40%;
+      min-width: 20%;
+      flex-shrink: 1;
       
       & .tools-title {
         color: $light;
         text-align: center;
         font-size: $title-font-size;
         position: relative;
-        left: 20%;
-        display: inline-block;
         padding: 0.5rem 2rem;
         // border-right: 2px solid $primary-color;
   
@@ -81,6 +83,7 @@
       height: 20rem;
       width: 60%;
       padding: 1rem;
+      flex-shrink: 3;
 
       & .list-icons {
         display: grid;
@@ -156,5 +159,122 @@
 }
 
 .main-projects {
-  // background-color: $secondary-color;
+  background-color: $secondary-color;
+  display: grid;
+  grid-template-columns: repeat( 2, 1fr );
+  grid-template-rows: repeat( 2, 1fr );
+  grid-template-areas: 
+  " project1 project2 "
+  " project3 project4 ";
+  padding-bottom: 2rem;
+  height: auto;
+  row-gap: 1rem;
+
+  & .main-projects__project1,
+  & .main-projects__project2,
+  & .main-projects__project3{
+    background-color: white;
+    min-width: 20rem;
+    max-width: 28rem;
+    align-self: center;
+    height: 28rem;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  & .main-projects__project1 {
+    justify-self: end;
+    margin-right: 1rem;
+  }
+
+  & .main-projects__project2 {
+    justify-self: start;
+    margin-left: 1rem;
+  }
+
+  & .main-projects__project3 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+  }
+
+  & .main-projects__project1 .project-content,
+  & .main-projects__project2 .project-content,
+  & .main-projects__project3 .project-content {
+
+    // height: 100%;
+    // max-width: 20rem;
+
+    & .project-content__img img{
+      height: 12rem;
+      width: 100%;
+      background-size: cover;
+    }
+
+    & .project-content__details {
+      padding: 1.5rem;
+      background-color: $light;
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+
+      & .project-description,
+      & div {
+        flex-grow: 1;
+      }
+
+      & .project-description {
+        color: $secondary-color;
+        font-size: 1.1rem;
+      }
+
+      & div .details-btn {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        height: 2rem;
+        border: none;
+        background-color: $secondary-color;
+        
+        & a {
+          border-radius: 4px;
+          color: $light;
+          position: relative;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          z-index: 1;
+          transition: color 0.5s ease;
+
+          &::before {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+          }
+          
+          &:hover {
+            color: $secondary-color;
+          }
+
+          &:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+
+          &::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            inset: 0 0 0 0;
+            background-color: $primary-color;
+            border-radius: 4px;
+            z-index: -1;
+            transition: transform 0.5s ease;
+          }
+        }
+      }
+    }
+  }
 }
