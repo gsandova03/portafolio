@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Gabriel Sandoval </title>
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="icon" href="./assets/logo.svg">
+  <link rel="shortcut icon" href="./assets/logo.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/logo.ico" type="image/x-icon">
 
   <!-- Font awesome CDN -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -29,10 +30,63 @@
   </header>
   <main id="top" class="main-container">
     <div id="main-description" class="main-description">
-
+      <picture>
+        <source media="(min-width:100px)" srcset="https://via.placeholder.com/150"/>
+        <img src="https://via.placeholder.com/150" alt="placeholder"/>
+      </picture>
+      <div class="personal-description">
+        <h1>Desarrollador Front End</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ullam rerum in alias ipsam magni laudantium eveniet nesciunt cupiditate? Accusamus veritatis consectetur dolor quidem quasi inventore explicabo deserunt tenetur ex.</p>
+      </div>
     </div>
     <div id="main-tools" class="main-tools">
-
+      <div class="tools-container">
+        <div>
+          <p class="tools-title">Herramientas</p>
+        </div>
+        <div class="tools-list">
+          <div class="list-icons">
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-html5"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="">
+                <i class="fab fa-css3-alt"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-js-square"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-bootstrap"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-sass"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-react"></i>
+              </a>
+            </div>
+            <div class="tool-icon">
+              <a href="#"><img src="./assets/redux.svg" /></a>
+            </div>
+            <div class="tool-icon">
+              <a href="#">
+                <i class="fab fa-git-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="main-projects" class="main-projects">
 
@@ -57,7 +111,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="./scripts/index.js"></script>
   <script src="./scripts/hamburger.js"></script>
 </body>

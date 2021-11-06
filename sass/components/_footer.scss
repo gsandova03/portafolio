@@ -13,16 +13,14 @@
   // justify-content: stretch;
   align-items: center;
   flex-direction: column;
+  justify-content: stretch;
 
   & .footer-social-title {
     color: $light;
     letter-spacing: 3px;
     text-align: center;
     font-size: $paragraph;
-  }
-
-  & .footer-social-links {
-    padding-top: 1rem;
+    height: 100%;
   }
 }
 

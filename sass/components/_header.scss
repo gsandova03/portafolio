@@ -19,7 +19,7 @@
     color: $light;
     text-decoration: none;
     font-family: $font-title;
-    font-size: $title-font-size;
+    font-size: 1.5rem;
     cursor: pointer;
   }
   
@@ -75,6 +75,7 @@ header.sticky {
   padding-bottom: 1rem;
   background-color: $secondary-color;
   position: fixed;
+  width: 100%;
 }
 
 
@@ -86,7 +87,7 @@ header.sticky .header-name
 
 .header-sidebar {
   position: fixed;
-  width: 12rem;
+  width: 10rem;
   height: calc( 100vh - 2rem );
   top: 2rem;
   right: -100%;

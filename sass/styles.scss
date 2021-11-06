@@ -5,7 +5,9 @@
 @import './components/main';
 @import './components/footer';
 
-* {
+*,
+*::before,
+*::after{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -13,8 +15,7 @@
 
 html {
   font-family: $font-f-paragraph;
-  background-color: $secondary-color;
-  max-width: 1366px;
+  background-color: $primary-color;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
