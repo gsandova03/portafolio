@@ -1,0 +1,149 @@
+/*
+  Header medias
+
+  navbar collapse
+*/
+
+@media ( max-width: 425px ) {
+
+  .header-navbar {
+    display: none;
+  }
+
+  
+  .main-tools .tools-container div,
+  .main-tools .tools-container div .tools-title {
+    width: fit-content;
+  }
+  
+  .main-tools .tools-container .tools-list {
+    padding: 0;
+    width: fit-content;
+    
+    & .list-icons {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    
+    & .list-icons .tool-icon a {
+      padding: 3px;
+      font-size: 3rem;
+      
+      & img {
+        width: 3rem;
+      }
+    }
+  }
+  
+  div.main-projects-container {
+    overflow-x: hidden;
+
+    & .main-projects__project1,
+    & .main-projects__project2,
+    & .main-projects__project3 {
+      height: auto;
+      margin-bottom: 5rem;
+
+      & .project-content .project-content__img,
+      & .project-content .project-content__details {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+@media ( max-width: 640px ) {
+
+  .header {
+    padding: 1rem .7rem 0.5rem .7rem;
+  }
+
+  .header-navbar {
+    display: none;
+  }
+
+  div#main-description.main-description,
+  div#main-tools.main-tools,
+  div#main-projects.main-projects,
+  footer#main-contact.footer {
+    padding: 0;
+    padding: 5rem 0rem 5rem 0rem;
+    height: auto;
+  }
+
+  .main-description .personal-description {
+    padding: 2rem 1.2rem;
+    height: auto;
+    
+    & p {
+      padding: 0;
+    }
+  }
+
+
+  div.tools-container {
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+  }
+
+  .main-tools .tools-container div .tools-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0;
+
+    &::after {
+      content: "";
+      background-color: #FFD369;
+      left: 0;
+      top: 100%;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+    }
+  }
+
+  .main-projects-container {
+    padding: 0 1rem;
+  }
+
+  .main-projects h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5rem;
+
+    &::before {
+      width: 8rem;
+    }
+  }
+
+  div.project-content {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media ( min-width: 644px ) {
+
+  .burger {
+    display: none;
+  }
+
+  .header-sidebar {
+    display: none;
+  }
+}
+
+@media ( max-width: 768px ) {
+  .main-description {
+    flex-direction: column;
+    padding-bottom: 4rem;
+    margin-top: 4rem;
+  }
+}
+
+// @media ( max-width: 1320px ) {
+
+  
+// }

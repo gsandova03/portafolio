@@ -24,11 +24,11 @@
 }
 .header .header-name::before {
   content: "< ";
-  color: #e9d946;
+  color: #FFD369;
 }
 .header .header-name::after {
   content: " />";
-  color: #e9d946;
+  color: #FFD369;
 }
 .header .header-name:hover {
   text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
@@ -49,7 +49,7 @@
 .navbar-item::before {
   content: "";
   position: absolute;
-  background: #e9d946;
+  background: #FFD369;
   width: 100%;
   height: 0.2rem;
   bottom: 0;
@@ -96,29 +96,6 @@ header.sticky .header-name {
   display: none;
 }
 
-@media (max-width: 320px) {
-  .header-navbar {
-    display: none;
-  }
-}
-@media (max-width: 630px) {
-  .header {
-    padding: 1rem 1rem 0.5rem 1rem;
-  }
-
-  .header-navbar {
-    display: none;
-  }
-}
-@media (min-width: 630px) {
-  .burger {
-    display: none;
-  }
-
-  .header-sidebar {
-    display: none;
-  }
-}
 .burger {
   font-size: 1rem;
   cursor: pointer;
@@ -129,7 +106,7 @@ header.sticky .header-name {
   width: 1.4rem;
   height: 0.2rem;
   border-radius: 3px;
-  background: #e9d946;
+  background: #FFD369;
 }
 .burger > div::before, .burger > div::after {
   transition: font-size 0s;
@@ -138,7 +115,7 @@ header.sticky .header-name {
   position: absolute;
   width: 1.4rem;
   height: 0.2rem;
-  background: #e9d946;
+  background: #FFD369;
   border-radius: 3px;
 }
 .burger > div::before {
@@ -149,31 +126,39 @@ header.sticky .header-name {
 }
 
 .main-container {
-  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-top: 3rem;
+  padding-top: 30px;
+  width: 100vw;
+  background-color: #FFD369;
 }
 
 .main-container > * {
   width: 100%;
-  height: 45rem;
   padding: 0 2rem;
+  overflow-x: hidden;
 }
 
 .main-description {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: calc(100vh + 6rem);
+}
+.main-description picture {
+  flex-basis: 50%;
+  margin: 0 2rem;
 }
 .main-description picture img {
-  width: 20rem;
+  width: 100%;
   height: 20rem;
+  align-content: center;
 }
 .main-description .personal-description {
   height: 15rem;
   flex-basis: 50%;
+  margin-left: 1rem;
 }
 .main-description .personal-description h1 {
   font-family: "Roboto Mono", monospace;
@@ -181,11 +166,13 @@ header.sticky .header-name {
   width: 100%;
   font-size: 2.5rem;
   color: #333;
+  text-align: center;
 }
 .main-description .personal-description p {
   padding: 1rem 1rem 0 0;
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
+  text-align: center;
 }
 
 .main-tools {
@@ -212,7 +199,7 @@ header.sticky .header-name {
 }
 .main-tools .tools-container div .tools-title::after {
   content: "";
-  background-color: #e9d946;
+  background-color: #FFD369;
   top: 0;
   right: 0;
   position: absolute;
@@ -220,7 +207,7 @@ header.sticky .header-name {
   height: 100%;
 }
 .main-tools .tools-container .tools-list {
-  height: 20rem;
+  height: auto;
   width: 60%;
   padding: 1rem;
   flex-shrink: 3;
@@ -230,7 +217,6 @@ header.sticky .header-name {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0.5rem 1rem;
-  grid-template-areas: "1 2 3 4" "5 6 7 8";
   width: 100%;
   height: 100%;
   align-items: center;
@@ -283,64 +269,70 @@ header.sticky .header-name {
 
 .main-projects {
   background-color: #333;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: " project1 project2 " " project3 project4 ";
-  padding-bottom: 2rem;
   height: auto;
-  row-gap: 1rem;
+  height: fit-content;
+  padding-top: 5rem;
 }
-.main-projects .main-projects__project1, .main-projects .main-projects__project2, .main-projects .main-projects__project3 {
-  background-color: white;
+.main-projects h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  padding: 5px 2rem;
+}
+.main-projects h1::before {
+  content: "";
+  position: absolute;
+  background-color: #FFD369;
+  width: 11rem;
+  height: 2px;
+  bottom: 0;
+}
+
+.main-projects-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.main-projects-container .main-projects__project1, .main-projects-container .main-projects__project2, .main-projects-container .main-projects__project3 {
   min-width: 20rem;
-  max-width: 28rem;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 2rem;
+  height: 40rem;
+}
+.main-projects-container .main-projects__project1 .project-content, .main-projects-container .main-projects__project2 .project-content, .main-projects-container .main-projects__project3 .project-content {
+  display: flex;
+}
+.main-projects-container .main-projects__project1 .project-content .project-content__img,
+.main-projects-container .main-projects__project1 .project-content .project-content__details, .main-projects-container .main-projects__project2 .project-content .project-content__img,
+.main-projects-container .main-projects__project2 .project-content .project-content__details, .main-projects-container .main-projects__project3 .project-content .project-content__img,
+.main-projects-container .main-projects__project3 .project-content .project-content__details {
+  padding: 1.5rem;
+  width: 50%;
   align-self: center;
-  height: 28rem;
-  border-radius: 5px;
-  overflow: hidden;
 }
-.main-projects .main-projects__project1 {
-  justify-self: end;
-  margin-right: 1rem;
-}
-.main-projects .main-projects__project2 {
-  justify-self: start;
-  margin-left: 1rem;
-}
-.main-projects .main-projects__project3 {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  justify-self: center;
-}
-.main-projects .main-projects__project1 .project-content .project-content__img img, .main-projects .main-projects__project2 .project-content .project-content__img img, .main-projects .main-projects__project3 .project-content .project-content__img img {
+.main-projects-container .main-projects__project1 .project-content .project-content__img img, .main-projects-container .main-projects__project2 .project-content .project-content__img img, .main-projects-container .main-projects__project3 .project-content .project-content__img img {
   height: 12rem;
   width: 100%;
   background-size: cover;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details, .main-projects .main-projects__project2 .project-content .project-content__details, .main-projects .main-projects__project3 .project-content .project-content__details {
-  padding: 1.5rem;
-  background-color: #ffffff;
-  height: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-}
-.main-projects .main-projects__project1 .project-content .project-content__details .project-description, .main-projects .main-projects__project1 .project-content .project-content__details div, .main-projects .main-projects__project2 .project-content .project-content__details .project-description, .main-projects .main-projects__project2 .project-content .project-content__details div, .main-projects .main-projects__project3 .project-content .project-content__details .project-description, .main-projects .main-projects__project3 .project-content .project-content__details div {
+.main-projects-container .main-projects__project1 .project-content .project-content__details .project-description, .main-projects-container .main-projects__project1 .project-content .project-content__details div, .main-projects-container .main-projects__project2 .project-content .project-content__details .project-description, .main-projects-container .main-projects__project2 .project-content .project-content__details div, .main-projects-container .main-projects__project3 .project-content .project-content__details .project-description, .main-projects-container .main-projects__project3 .project-content .project-content__details div {
   flex-grow: 1;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details .project-description, .main-projects .main-projects__project2 .project-content .project-content__details .project-description, .main-projects .main-projects__project3 .project-content .project-content__details .project-description {
-  color: #333;
+.main-projects-container .main-projects__project1 .project-content .project-content__details .project-description, .main-projects-container .main-projects__project2 .project-content .project-content__details .project-description, .main-projects-container .main-projects__project3 .project-content .project-content__details .project-description {
+  color: #ffffff;
   font-size: 1.1rem;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn {
   margin-top: 1rem;
   font-size: 1.1rem;
   height: 2rem;
   border: none;
   background-color: #333;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn a, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn a, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn a {
   border-radius: 4px;
   color: #ffffff;
   position: relative;
@@ -349,18 +341,18 @@ header.sticky .header-name {
   z-index: 1;
   transition: color 0.5s ease;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
   transform: scaleX(0);
   transform-origin: bottom right;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a:hover, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a:hover, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a:hover {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn a:hover, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn a:hover, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn a:hover {
   color: #333;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a:hover::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a:hover::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a:hover::before {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn a:hover::before, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn a:hover::before, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn a:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.main-projects .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
+.main-projects-container .main-projects__project1 .project-content .project-content__details div .details-btn a::before, .main-projects-container .main-projects__project2 .project-content .project-content__details div .details-btn a::before, .main-projects-container .main-projects__project3 .project-content .project-content__details div .details-btn a::before {
   content: " ";
   display: block;
   position: absolute;
@@ -369,7 +361,7 @@ header.sticky .header-name {
   bottom: 0;
   left: 0;
   inset: 0 0 0 0;
-  background-color: #e9d946;
+  background-color: #FFD369;
   border-radius: 4px;
   z-index: -1;
   transition: transform 0.5s ease;
@@ -378,8 +370,19 @@ header.sticky .header-name {
 .footer {
   background-color: #333;
   width: 100vw;
-  height: 20vh;
+  height: 50vh;
   padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+}
+.footer::before {
+  content: "";
+  background-color: #FFD369;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  position: absolute;
 }
 
 .footer-social {
@@ -388,23 +391,27 @@ header.sticky .header-name {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: stretch;
+  justify-content: space-around;
 }
 .footer-social .footer-social-title {
   color: #ffffff;
   letter-spacing: 3px;
   text-align: center;
-  font-size: 1rem;
-  height: 100%;
+  font-size: 2rem;
+  height: 50%;
+  align-content: center;
+}
+.footer-social .footer-social-links {
+  height: 50%;
 }
 
 .social-link i {
-  color: white;
-  padding: 0.5rem;
+  color: #ffffff;
+  padding: 1rem;
   margin: 0 0.7rem;
   cursor: pointer;
   border-radius: 3px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: background-color 0.3s ease;
 }
 
@@ -412,6 +419,129 @@ header.sticky .header-name {
   background-color: rgba(27, 27, 27, 0.5);
 }
 
+/*
+  Header medias
+
+  navbar collapse
+*/
+@media (max-width: 425px) {
+  .header-navbar {
+    display: none;
+  }
+
+  .main-tools .tools-container div,
+.main-tools .tools-container div .tools-title {
+    width: fit-content;
+  }
+
+  .main-tools .tools-container .tools-list {
+    padding: 0;
+    width: fit-content;
+  }
+  .main-tools .tools-container .tools-list .list-icons {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .main-tools .tools-container .tools-list .list-icons .tool-icon a {
+    padding: 3px;
+    font-size: 3rem;
+  }
+  .main-tools .tools-container .tools-list .list-icons .tool-icon a img {
+    width: 3rem;
+  }
+
+  div.main-projects-container {
+    overflow-x: hidden;
+  }
+  div.main-projects-container .main-projects__project1, div.main-projects-container .main-projects__project2, div.main-projects-container .main-projects__project3 {
+    height: auto;
+    margin-bottom: 5rem;
+  }
+  div.main-projects-container .main-projects__project1 .project-content .project-content__img, div.main-projects-container .main-projects__project1 .project-content .project-content__details, div.main-projects-container .main-projects__project2 .project-content .project-content__img, div.main-projects-container .main-projects__project2 .project-content .project-content__details, div.main-projects-container .main-projects__project3 .project-content .project-content__img, div.main-projects-container .main-projects__project3 .project-content .project-content__details {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem 0.7rem 0.5rem 0.7rem;
+  }
+
+  .header-navbar {
+    display: none;
+  }
+
+  div#main-description.main-description,
+div#main-tools.main-tools,
+div#main-projects.main-projects,
+footer#main-contact.footer {
+    padding: 0;
+    padding: 5rem 0rem 5rem 0rem;
+    height: auto;
+  }
+
+  .main-description .personal-description {
+    padding: 2rem 1.2rem;
+    height: auto;
+  }
+  .main-description .personal-description p {
+    padding: 0;
+  }
+
+  div.tools-container {
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+  }
+
+  .main-tools .tools-container div .tools-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0;
+  }
+  .main-tools .tools-container div .tools-title::after {
+    content: "";
+    background-color: #FFD369;
+    left: 0;
+    top: 100%;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+  }
+
+  .main-projects-container {
+    padding: 0 1rem;
+  }
+
+  .main-projects h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5rem;
+  }
+  .main-projects h1::before {
+    width: 8rem;
+  }
+
+  div.project-content {
+    flex-direction: column;
+    height: auto;
+  }
+}
+@media (min-width: 644px) {
+  .burger {
+    display: none;
+  }
+
+  .header-sidebar {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main-description {
+    flex-direction: column;
+    padding-bottom: 4rem;
+    margin-top: 4rem;
+  }
+}
 *,
 *::before,
 *::after {
@@ -422,8 +552,7 @@ header.sticky .header-name {
 
 html {
   font-family: "Open Sans", sans-serif;
-  background-color: #e9d946;
-  overflow-x: hidden;
+  background-color: #333;
   scroll-behavior: smooth;
 }
 

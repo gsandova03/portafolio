@@ -4,6 +4,7 @@
 @import './components/hambuerger_menu';
 @import './components/main';
 @import './components/footer';
+@import './config/medias';
 
 *,
 *::before,
@@ -15,7 +16,6 @@
 
 html {
   font-family: $font-f-paragraph;
-  background-color: $primary-color;
-  overflow-x: hidden;
+  background-color: $secondary-color;
   scroll-behavior: smooth;
 }
