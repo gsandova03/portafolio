@@ -6,15 +6,6 @@
   background-color: $primary-color;
 }
 
-// .main-container > * {
-//   // width: 100%;
-//   // height: 45rem;
-//   // height: 100vh;
-//   padding: 0 2rem;
-//   overflow-x: hidden;
-// }
-
-
 .main-description {
   display: flex;
   justify-content: space-evenly;
@@ -38,8 +29,8 @@
     margin-left: 1rem;
 
     & h1 {
-      font-family: $font-title;
-      font-weight: 900;
+      font-family: $font;
+      font-weight: 700;
       width: 100%;
       font-size: 2.5rem;
       color: $secondary-color;
@@ -49,7 +40,8 @@
     & p{
       padding: 1rem 1rem 0 0;
       font-size: $paragraph;
-      font-family: $font-f-paragraph;
+      font-family: $font;
+      font-weight: 100;
       text-align: center;
     }
   }
@@ -69,6 +61,8 @@
         color: $light;
         text-align: center;
         font-size: $title-font-size;
+        font-family: $font;
+        font-weight: 700;
         position: relative;
         padding: 0.5rem 2rem;
   
@@ -95,9 +89,6 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 0.5rem 1rem;
-        // grid-template-areas:
-        // "1 2 3 4"
-        // "5 6 7 8";
         width: 100%;
         height: 100%;
         align-items: center;

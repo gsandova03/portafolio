@@ -18,7 +18,8 @@
   & .header-name {
     color: $light;
     text-decoration: none;
-    font-family: $font-title;
+    font-family: $font;
+    font-weight: 700;
     font-size: 1.5rem;
     cursor: pointer;
   }
@@ -47,7 +48,8 @@
   color: $light;
   cursor: pointer;
   font-size: $paragraph;
-  font-weight: 500;
+  font-family: $font;
+  font-weight: 100;
   text-decoration: none;
 
   &::before {
